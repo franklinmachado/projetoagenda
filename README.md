@@ -1,2 +1,2 @@
 # projetoagenda
- um projeto de front e back-end para uso dos conheçimentos
+ um projeto de front e back-end para uso dos conhecimentos adquiridos.
