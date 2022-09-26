@@ -1,35 +1,41 @@
-<%- include('includes/head') -%>
-<%- include('includes/nav') -%>
-
+<%- include('includes/header'); -%>
+<%- include('includes/navbar'); -%>
 
 <div class="container">
   <div class="row">
     <div class="col-lg-2"></div>
 
-    <div class="col-lg-8 my-5">
+    <div class="col-lg-8 my-4">
       <h1 class="text-center">Agenda</h1>
-      <p class="text-center lead">Abaixo estão seus contatos.</p>   
+      <p class="text-center lead">Contatos</p>
 
-      <%- include('includes/messages'); %>
+      <%- include('includes/messages') -%>
 
+      <% if(contatos.length > 0) { %>
       <div class="responsive-table">
         <table class="table my-3">
-          <tr>
-            <td>Franklin Machado</td>
-            <td>Franklin_machado@gmail.com</td>
-            <td>(21) 968321851</td>
-            <td>_FrankM</td>
-          </tr>
+
+          <% contatos.forEach( contato => { %>
+            <tr>
+              <td><%= contato.nome %></td>
+              <td><%= contato.email %></td>
+              <td><%= contato.telefone %></label></td>
+              <td><%= contato.redeSocial %></label></td>
+              <td><a href="/contato/<%= contato._id%>">Editar</a></td>
+              <td><a class="text-danger" href="/contato/delete/<%= contato._id%>">Excluir</a></td>
+            </tr>
+          <% }); %>
+
         </table>
       </div>
-
+      <% } else { %>
+        <p class="text-center lead">Você não tem contatos cadastrados no momento.</p>
+      <% }; %>
+      
     </div>
 
     <div class="col-lg-2"></div>
   </div>
 </div>
 
-
-<%- include('includes/footer') -%>
-
-
+<%- include('includes/footer'); -%>

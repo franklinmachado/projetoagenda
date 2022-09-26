@@ -1,0 +1,20 @@
+<%- include('includes/header'); -%> <%- include('includes/navbar'); -%>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-4">
+      <h1 class="text-center">Olá <%= user.email%></h1>
+      <p class="text-center lead my-2">
+        Você já pode editar e atualizar seus contatos na agenda.
+      </p>
+
+      <%- include('includes/messages'); -%>
+
+      <div class="col-lg-2"></div>
+    </div>
+  </div>
+
+</div>
+<%- include('includes/footer'); -%>
